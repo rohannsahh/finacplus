@@ -1,9 +1,9 @@
 # Finacplus assignment     
    
-## frontend  - https://finacplus.vercel.app/    
-## backend - https://finacplus-production.up.railway.app     
-## video demonstration-     
-## postman api collection - https://dark-shuttle-316146.postman.co/workspace/New-Team-Workspace~2520c6ff-2b4c-429d-8afb-f76492bfc532/collection/29159995-e27188fc-eec2-42aa-81e1-0c5e31dc537a?action=share&creator=29159995    
+### frontend  - https://finacplus.vercel.app/    
+### backend - https://finacplus-production.up.railway.app     
+### video demonstration- https://drive.google.com/file/d/1zTC82fC01TALPnhCCrwVFxfqz8K705v5/view?usp=sharing     
+### postman api collection - https://dark-shuttle-316146.postman.co/workspace/New-Team-Workspace~2520c6ff-2b4c-429d-8afb-f76492bfc532/collection/29159995-e27188fc-eec2-42aa-81e1-0c5e31dc537a?action=share&creator=29159995    
 
   
     
@@ -46,22 +46,21 @@
   "password": "securepassword123",
   "gender": "Male",
   "about": "I am a software engineer."
-}
-
-
-{
-    "message": "User created successfully",
-    "user": {
-        "name": "Rohan shah",
-        "age": 50,
-        "dob": "1980-05-10T00:00:00.000Z",
-        "password": "$2b$10$mN4bcqNo803nuRV8W1zJ7uKaq9MDfKW5y9saxMysEwyAIVLLBoSE6",
-        "gender": "Male",
-        "about": "I am a software engineer.",
-        "_id": "67cf5160745775e09217db80",
-        "__v": 0
-    }
-}
+   }
+   
+   {
+       "message": "User created successfully",
+       "user": {
+           "name": "Rohan shah",
+           "age": 50,
+           "dob": "1980-05-10T00:00:00.000Z",
+           "password": "$2b$10$mN4bcqNo803nuRV8W1zJ7uKaq9MDfKW5y9saxMysEwyAIVLLBoSE6",
+           "gender": "Male",
+           "about": "I am a software engineer.",
+           "_id": "67cf5160745775e09217db80",
+           "__v": 0
+       }
+   }
 
   
 2. update user -/api/user/:id  put request
@@ -108,29 +107,29 @@
     required:true,
     minlength:2,
 
-  },
- 
-  age:{
-    type: Number,
-    required:true,
-    min:0, 
-    max:120,
-  },
-  dob:{
-    type:Date,
-    required:true,
-  },
-  password:{
-    type:String ,
-    required : true,
-    minlength:10,
-  },
-  gender:{
-    type:String,
-    required:true,
-    enum:["Male","Female", "Others"],
-  },
-  about:{
-    type:String,
-    maxlength:5000,
-  }
+    },
+
+    age:{
+      type: Number,
+      required:true,
+      min:0, 
+      max:120,
+    },
+    dob:{
+      type:Date,
+      required:true,
+    },
+    password:{
+      type:String ,
+      required : true,
+      minlength:10,
+    },
+    gender:{
+      type:String,
+      required:true,
+      enum:["Male","Female", "Others"],
+    },
+    about:{
+      type:String,
+      maxlength:5000,
+    }
