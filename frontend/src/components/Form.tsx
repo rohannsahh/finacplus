@@ -86,23 +86,42 @@ if (calculatedAge !== age) {
         SetformData({...formData,[e.target.id]:e.target.value})
     }
 
+    const API_URL = import.meta.env.VITE_API_URL;
 
-    const handleSubmit=(e: React.FormEvent<HTMLFormElement>)=>{
-       e.preventDefault();
-     if (validate()){
-        toast.success("Registration Successful ")
-        SetformData({
-            name: "",
-            age: "",
-            dob: "",
-            password: "",
-            gender: "",
-            about: "",
-        });
-
-        setErrors({});
-     }
-    }
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (validate()) {
+            try {
+                const response = await fetch(`${API_URL}/api/user`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                });
+    
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || "Registration failed");
+                }
+    
+                toast.success("Registration Successful");
+                SetformData({
+                    name: "",
+                    age: "",
+                    dob: "",
+                    password: "",
+                    gender: "",
+                    about: "",
+                });
+    
+                setErrors({});
+            } catch (error) {
+                toast.error((error as Error).message || "An error occurred. Please try again.");
+            }
+        }
+    };
+    
 
 
   return (
