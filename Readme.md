@@ -16,17 +16,17 @@
   
 2. backend folder - 
   
-```  
-   cd backend 
+``` cd backend 
    npm i 
-   npm run dev
+   npm run dev  
+  
   
   
 3. frontend folder -  
-```
-  cd ../frontend  
+```cd ../frontend  
   npm i  
-  npme run dev
+  npm run dev
+  
 
   
  Set up env in backend and frontend for mongo db and backend url        
@@ -38,8 +38,7 @@
   
 1. create user - /api/user/     post request  
 
-```
-  {
+```{
   "name": "Rohan shah",
   "age": 50,
   "dob": "1980-05-10",
@@ -61,6 +60,7 @@
            "__v": 0
        }
    }
+  
 
   
 2. update user -/api/user/:id  put request
